@@ -1,0 +1,5 @@
+pip install cookiecutter
+pip install dvc
+git init # inside the project aadd the repository
+dvc add Training_Batch_Files/*.csv Prediction_Batch_files/*.  # adding the training dataset
+
