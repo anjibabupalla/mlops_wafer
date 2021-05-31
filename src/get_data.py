@@ -18,11 +18,12 @@ def read_params(config_path):
         config = yaml.safe_load(yaml_file)
     return config
 
-def get_data(config_path,datasource):
+def get_data(config_path):
     config = read_params(config_path)
     print('displaying config values',config)
     data_path = config['data_source']['batch_files']
-    df = read_all_csv(data_path)
+    df = pd.read_csv(data_path)
+    print(df.columns)
     return df
 
 
@@ -34,4 +35,4 @@ if __name__=="__main__":
     args.add_argument("--config",default=default_config_path)
     # args.add_argument("--datasource",default=None)
     parsed_args = args.parse_args()    
-    data = get_data(config_path=parsed_args.config,datasource=parsed_args.datasource)
+    data = get_data(config_path=parsed_args.config)
