@@ -4,7 +4,7 @@ base:
   target_col: Output
 
 data_source:
-  batch_files: Training_Batch_Files
+  batch_files: data_given/winequality.csv
 
 
 data_preparation:
