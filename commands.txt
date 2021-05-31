@@ -1,5 +1,11 @@
 pip install cookiecutter
 pip install dvc
-git init # inside the project aadd the repository
-dvc add Training_Batch_Files/*.csv Prediction_Batch_files/*.  # adding the training dataset
+git init # inside the project 
+dvc add Training_Batch_Files/*.csv Prediction_Batch_files/*.csv  # adding the training dataset if error in windows use the code dvc_add_files.py
+git add . && git commit -m "" # add to the remote repostory
+pip install dvc[gdrive]
+dvc remote add -d storage gdrive://1rsSEFpun-KyB3dKLQcRa-rUoSoYTBHEm
+git add .dvc/config && git commit -m "Configure remote storage"
+dvc push #SAVE THE GDRIVE credential from .dvc folder secrets on git reposity
+
 
