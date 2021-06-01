@@ -14,15 +14,12 @@ split_data:
   test_path: data/processed/test_winequality.csv
   test_size: 0.25
 
-# estimators:
-#  ElasticNet:
-#   params:
-      # alpha: 0.88
-      # l1_ratio: 0.89
 estimators:
- params:
-  alpha: 0.9
-  l1_ratio: 0.4
+ ElasticNet:
+  params:
+      alpha: 0.88
+      l1_ratio: 0.89
+
 
 reports:
   params: reports/params.json
