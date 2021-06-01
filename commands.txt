@@ -14,9 +14,11 @@ dvc params diff
 dvc metrics show
 dvc metrics diff
 dvc metrics diff #to get the changes in the paramaters tunning alpha and l1_ratio
+pytest -v # manually run pytest without tox
 tox # for pytest
 pip install -e . # to run setup.py dvc_add_file
 pip freeze #to see current packages installed
+python setup.py sdist bdist_wheel #to create a wheel file sdist(standard distribution) bdist(sdist(standard distribution))
 
 
 
