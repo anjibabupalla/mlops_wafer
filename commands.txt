@@ -10,5 +10,9 @@ dvc push #SAVE THE GDRIVE credential from .dvc folder secrets on git reposity
 dvc repro # for running stages
    - git add . && git commit -m "stage-1 load_data completed"
    - git push
+dvc params diff
+dvc metrics show
+dvc metrics diff
+
 
 

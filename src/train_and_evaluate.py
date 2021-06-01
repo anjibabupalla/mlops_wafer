@@ -25,9 +25,9 @@ def train_and_evaluate(config_path):
     train_data_path = config['split_data']['train_path']
     random_state = config['base']['random_state']
     model_dir = config['saved_models']['model_dir']
-    alpha = config['estimators']['ElasticNet']['params']['alpha']
-    l1_ratio = config['estimators']['ElasticNet']['params']['l1_ratio']
-    target = config['base']['target_col']
+    alpha = config['estimators']['params']['alpha']
+    l1_ratio = config['estimators']['params']['l1_ratio']
+    target = config['base']['target_col'] 
     
 
     train = pd.read_csv(train_data_path,sep=',')
