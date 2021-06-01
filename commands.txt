@@ -19,7 +19,18 @@ tox # for pytest
 pip install -e . # to run setup.py dvc_add_file
 pip freeze #to see current packages installed
 python setup.py sdist bdist_wheel #to create a wheel file sdist(standard distribution) bdist(sdist(standard distribution))
-
-
-
+sample Json for postman
+{
+        "fixed_acidity": 999,
+        "volatile_acidity": "666",
+        "citric_acid": "99",
+        "residual_sugar": "99",
+        "chlorides": "12",
+        "free_sulfur_dioxide": "789",
+        "total_sulfur_dioxide": "75",
+        "density": "2",
+        "pH": "33",
+        "sulphates": "9",
+        "alcohol": "29"
+    }
 

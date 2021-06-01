@@ -28,7 +28,7 @@ reports:
 saved_models:
   model_dir: models
 
-# webapp_model_dir: prediction_service/model/model.joblib
+webapp_model_dir: prediction_service/model/model.joblib
 
 # data_preparation:
 #   training_db: Training.db
