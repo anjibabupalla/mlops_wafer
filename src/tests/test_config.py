@@ -11,8 +11,3 @@ def test_generic():
     assert a == b
 
 
-def test_not_in_ange():
-    a = 5
-    with pytest.raises(NotInRangeError):
-        if a not in range(10, 20):
-            raise NotInRangeError
