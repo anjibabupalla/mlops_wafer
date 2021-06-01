@@ -1,7 +1,7 @@
 base:
   project: Wafer-Quality-Project
   random_state: 42
-  target_col: Output
+  target_col: TARGET
 
 data_source:
   batch_files: data_given/winequality.csv
@@ -13,6 +13,18 @@ split_data:
   train_path: data/processed/train_winequality.csv
   test_path: data/processed/test_winequality.csv
   test_size: 0.2
+
+estimators:
+  ElasticNet:
+    params:
+      alpha: 0.88
+      l1_ratio: 0.89
+
+reports:
+  params: reports/params.json
+  scores: reports/scores.json
+
+webapp_model_dir: prediction_service/model/model.joblib
 
 data_preparation:
   training_db: Training.db
@@ -45,7 +57,7 @@ data_preprocessing:
 
   preprocessed_data_dir_pred: data/preprocessed_data_pred
 
-
+  
   KNNImputer: 
     n_neighbors: 3 
     weights: uniform
