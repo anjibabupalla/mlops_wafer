@@ -1,13 +1,66 @@
 
+from werkzeug.datastructures import Range
+from prediction_service.prediction import form_response,api_response
 import pytest
 
 
 
 
+input_data = {
+    "incorrect_range": 
+    {"fixed_acidity": 7897897, 
+    "volatile_acidity": 555, 
+    "citric_acid": 99, 
+    "residual_sugar": 99, 
+    "chlorides": 12, 
+    "free_sulfur_dioxide": 789, 
+    "total_sulfur_dioxide": 75, 
+    "density": 2, 
+    "pH": 33, 
+    "sulphates": 9, 
+    "alcohol": 9
+    },
 
-def test_generic():
-    a = 2
-    b = 2
-    assert a == b
+    "correct_range":
+    {"fixed_acidity": 5, 
+    "volatile_acidity": 1, 
+    "citric_acid": 0.5, 
+    "residual_sugar": 10, 
+    "chlorides": 0.5, 
+    "free_sulfur_dioxide": 3, 
+    "total_sulfur_dioxide": 75, 
+    "density": 1, 
+    "pH": 3, 
+    "sulphates": 1, 
+    "alcohol": 9
+    },
+
+    "incorrect_col":
+    {"fixed acidity": 5, 
+    "volatile acidity": 1, 
+    "citric acid": 0.5, 
+    "residual sugar": 10, 
+    "chlorides": 0.5, 
+    "free sulfur dioxide": 3, 
+    "total_sulfur dioxide": 75, 
+    "density": 1, 
+    "pH": 3, 
+    "sulphates": 1, 
+    "alcohol": 9
+    }
+}
+
+TARGET_RANGE = {
+    "min":3.0,
+    "max":8.0
+}
 
 
+def test_form_response_correct_range(data=input_data['correct_range']):
+    res = form_response(data)
+    assert TARGET_RANGE['min'] <= res <= TARGET_RANGE['max']
+
+
+def test_api_response_correct_range(data=input_data['correct_range']):
+    res = api_response(data)
+    assert TARGET_RANGE['min'] <= res['response'] <= TARGET_RANGE['max']
