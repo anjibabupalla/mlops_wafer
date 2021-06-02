@@ -29,10 +29,7 @@ def get_data(config_path):
 
 
 if __name__=="__main__":
-    args =  argparse.ArgumentParser()
-    default_config_path = os.path.join("config",'params.yaml')
-    
-    args.add_argument("--config",default=default_config_path)
-    # args.add_argument("--datasource",default=None)
-    parsed_args = args.parse_args()    
-    data = get_data(config_path=parsed_args.config)
+    parser =  argparse.ArgumentParser()
+    parser.add_argument('--config',default='config/params.yaml')
+    args = parser.parse_args()
+    data = load_and_save(config_path=args.config)
