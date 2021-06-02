@@ -61,6 +61,6 @@ def test_form_response_correct_range(data=input_data['correct_range']):
     assert TARGET_RANGE['min'] <= res <= TARGET_RANGE['max']
 
 
-def test_api_response_correct_range(data=input_data['correct_range']):
-    res = api_response(data)
-    assert TARGET_RANGE['min'] <= res['response'] <= TARGET_RANGE['max']
+# def test_api_response_correct_range(data=input_data['correct_range']):
+#     res = api_response(data)
+#     assert TARGET_RANGE['min'] <= res['response'] <= TARGET_RANGE['max']
